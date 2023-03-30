@@ -7,10 +7,18 @@
 {{-- <h2>Fakultas</h2> --}}
 {{-- <p>Ini halaman fakultas</p> --}}
 {{-- {{ $fikr }} --}}
-
-<ul>
+ 
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Nama Fakultas</th>
+   </tr>
+</thead>
+    <tbody>
 @foreach ($dataFakultas as $item)
-    <li>{{$item}}</li>
+    <tr><td>{{$item}}</td></tr>
 @endforeach
-</ul>
+</tbody>
+</table>
+
 @endsection
