@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FakultasController;
 use App\Http\Controllers\ProdiController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,8 +28,7 @@ Route::get('/dosen/index', function () {
     return view('dosen.index');
 });
 Route::get('/fakultas', function () {
-    //return view('fakultas.index', ['fikr' => 'Fakultas Ilmu Komputer dan Rekayasa']);
-    return view('fakultas.index')
-                -> with('dataFakultas', ['FIKR', 'FEB']);
+    return view('fakultas.index')->with('dataFakultas', ['FIKR', 'FEB']);
 });
-Route::get('prodi',[ProdiController::class,'index'])->name('prodi');
+Route::get('prodi', [ProdiController::class, 'index'])->name('prodi');
+Route::resource('fakultas', FakultasController::class);
