@@ -21,14 +21,6 @@ Route::get('/', function () {
 Route::get('/profil', function () {
     return "halaman profil";
 });
-Route::get('/dosen', function () {
-    return view('dosen');
-});
-Route::get('/dosen/index', function () {
-    return view('dosen.index');
-});
-Route::get('/fakultas', function () {
-    return view('fakultas.index')->with('dataFakultas', ['FIKR', 'FEB']);
-});
 Route::get('prodi', [ProdiController::class, 'index'])->name('prodi');
 Route::resource('fakultas', FakultasController::class);
+Route::resource('prodi', ProdiController::class);
