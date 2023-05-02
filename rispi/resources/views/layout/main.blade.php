@@ -7,8 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Spica Admin</title>
   <!-- base:css -->
-  <link rel="stylesheet" href="vendors/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="{{asset('vendors/mdi/css/materialdesignicons.min.css')}}">
+  <link rel="stylesheet" href="{{asset('vendors/css/vendor.bundle.base.css')}}">
   <!-- endinject -->
   <!-- plugin css for this page -->
   <!-- End plugin css for this page -->
@@ -24,7 +24,7 @@
         <div class="card-body card-body-padding d-flex align-items-center justify-content-between">
           <div class="ps-lg-1">
             <div class="d-flex align-items-center justify-content-between">
-              <p class="mb-0 font-weight-medium me-3 buy-now-text">Free 24/7 customer support, updates, and more with this template!</p>
+              <p class="mb-0 font-weight-medium me-3 buy-now-text">Kepo</p>
               <a href="https://www.bootstrapdash.com/product/spica-admin/?utm_source=organic&utm_medium=banner&utm_campaign=buynow_demo" target="_blank" class="btn me-2 buy-now-btn border-0">Get Pro</a>
             </div>
           </div>
@@ -45,9 +45,23 @@
           <span></span>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.html">
+            <a class="nav-link" href="index.html">
             <i class="mdi mdi-view-quilt menu-icon"></i>
             <span class="menu-title">Dashboard</span>
+            <div class="badge badge-info badge-pill">2</div>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url('fakultas')}}">
+            <i class="mdi mdi-view-list menu-icon"></i>
+            <span class="menu-title">Fakultas</span>
+            <div class="badge badge-info badge-pill">2</div>
+          </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url('prodi')}}">
+            <i class="mdi mdi-view-module menu-icon"></i>
+            <span class="menu-title">Program Studi</span>
             <div class="badge badge-info badge-pill">2</div>
           </a>
         </li>
@@ -138,8 +152,8 @@
             <span class="mdi mdi-menu"></span>
           </button>
           <div class="navbar-brand-wrapper">
-            <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo.svg" alt="logo"/></a>
-            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
+            <a class="navbar-brand brand-logo" href="index.html"><img src="{{asset('images/logo.svg" alt="logo')}}"/></a>
+            <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{{asset('images/logo-mini.svg" alt="logo')}}"/></a>
           </div>
           <h4 class="font-weight-bold mb-0 d-none d-md-block mt-1">Welcome back, Brandon Haynes</h4>
           <ul class="navbar-nav navbar-nav-right">
@@ -155,7 +169,7 @@
                 <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                      <img src="images/faces/face4.jpg" alt="image" class="profile-pic">
+                      <img src="{{asset('images/faces/face4.jpg" alt="image" class="profile-pic')}}">
                   </div>
                   <div class="preview-item-content flex-grow">
                     <h6 class="preview-subject ellipsis font-weight-normal">David Grey
@@ -167,7 +181,7 @@
                 </a>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                      <img src="images/faces/face2.jpg" alt="image" class="profile-pic">
+                      <img src="{{asset('images/faces/face2.jpg" alt="image" class="profile-pic')}}">
                   </div>
                   <div class="preview-item-content flex-grow">
                     <h6 class="preview-subject ellipsis font-weight-normal">Tim Cook
@@ -179,7 +193,7 @@
                 </a>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                      <img src="images/faces/face3.jpg" alt="image" class="profile-pic">
+                      <img src="{{asset('images/faces/face3.jpg" alt="image" class="profile-pic')}}">
                   </div>
                   <div class="preview-item-content flex-grow">
                     <h6 class="preview-subject ellipsis font-weight-normal"> Johnson
@@ -255,7 +269,7 @@
           <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item nav-profile dropdown">
               <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" id="profileDropdown">
-                <img src="images/faces/face5.jpg" alt="profile"/>
+                <img src="{{asset('images/faces/face5.jpg" alt="profile')}}"/>
                 <span class="nav-profile-name">Eleanor Richardson</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
@@ -290,8 +304,9 @@
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
-         
-          <div class="row">          
+         @yield('content')
+          <div class="row">
+            
           </div>
         </footer>
         <!-- partial -->
@@ -303,22 +318,22 @@
   <!-- container-scroller -->
 
   <!-- base:js -->
-  <script src="vendors/js/vendor.bundle.base.js"></script>
+  <script src="{{asset('vendors/js/vendor.bundle.base.js')}}"></script>
   <!-- endinject -->
   <!-- Plugin js for this page-->
-  <script src="vendors/chart.js/Chart.min.js"></script>
-  <script src="js/jquery.cookie.js" type="text/javascript"></script>
+  <script src="{{asset('vendors/chart.js/Chart.min.js')}}"></script>
+  <script src="{{asset('js/jquery.cookie.js" type="text/javascript')}}"></script>
   <!-- End plugin js for this page-->
   <!-- inject:js -->
-  <script src="js/off-canvas.js"></script>
-  <script src="js/hoverable-collapse.js"></script>
-  <script src="js/template.js"></script>
+  <script src="{{asset('js/off-canvas.js')}}"></script>
+  <script src="{{asset('js/hoverable-collapse.js')}}"></script>
+  <script src="{{asset('js/template.js')}}"></script>
   <!-- endinject -->
   <!-- plugin js for this page -->
-    <script src="js/jquery.cookie.js" type="text/javascript"></script>
+    <script src="{{asset('js/jquery.cookie.js" type="text/javascript')}}"></script>
   <!-- End plugin js for this page -->
   <!-- Custom js for this page-->
-  <script src="js/dashboard.js"></script>
+  <script src="{{asset('js/dashboard.js')}}"></script>
   <!-- End custom js for this page-->
 </body>
 
