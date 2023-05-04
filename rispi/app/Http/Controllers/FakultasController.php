@@ -28,7 +28,16 @@ class FakultasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //dd($request);
+        //dd($request->nama_wakil_dekan);
+        
+        //validasi data
+
+        $validasi= $request->validate([
+            'nama_fakultas'=> 'required',
+            'nama_dekan'=> 'requiresd',
+            'nama_wakil_dekan' => 'required'
+        ]);
     }
 
     /**
