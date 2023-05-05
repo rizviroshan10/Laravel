@@ -11,6 +11,7 @@
               <div class="card">
                 <div class="card-body">
                     <a href="{{route('prodi.create')}}" class="btn btn-primary">Tambah</a>
+                    
                   <h4 class="card-title">Program Studi</h4>
                   <div class="table-responsive">
                     <table class="table table-striped">
@@ -33,6 +34,6 @@
 
 
     <table class="table table-hover">
-       
+
     </table>
 @endsection

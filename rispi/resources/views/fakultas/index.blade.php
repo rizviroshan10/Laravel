@@ -45,7 +45,7 @@
                         </tr>
                     @endforeach
                     </tbody>
-                       
+
                     </table>
                   </div>
                 </div>
@@ -55,7 +55,7 @@
           <!-- row end -->
 
 <table class="table table-hover">
-   
+
 </table>
 
 @endsection

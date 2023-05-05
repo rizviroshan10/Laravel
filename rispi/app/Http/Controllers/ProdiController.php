@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Prodi;
+use App\Models\Fakultas;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rules\Unique;
 
 class ProdiController extends Controller
 {
@@ -19,7 +21,8 @@ class ProdiController extends Controller
      */
     public function create()
     {
-        return view('prodi.create');
+        $fakultas = Fakultas::orderBy('nama_fakultas','ASC')->get();
+        return view('prodi.create')-> with('fakultas', $fakultas);
     }
 
     /**
@@ -29,13 +32,12 @@ class ProdiController extends Controller
     {
         //dd($request);
         //dd($request->nama_wakil_dekan);
-        
+
         //validasi data
 
         $validasi= $request->validate([
-            'nama_prodi'=> 'required',
+            'nama_prodi'=> 'required |Unique:prodi',
             'fakultas_id'=> 'required',
-            'nama_wakil_dekan' => 'required'
         ]);
 
         //dd($validasi);
@@ -43,7 +45,6 @@ class ProdiController extends Controller
         $prodi = new Prodi();
         $prodi ->nama_prodi = $validasi['nama_prodi'];
         $prodi ->fakultas_id = $validasi['fakultas_id'];
-        $prodi ->nama_wakil_dekan = $validasi['nama_wakil_dekan'];
         $prodi ->save(); //simpan
 
         return redirect()->route('prodi.index')->with('success',"Data Prodi".$validasi
@@ -84,4 +85,4 @@ class ProdiController extends Controller
 }
 
 
-    
+

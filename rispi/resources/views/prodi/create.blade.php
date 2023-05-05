@@ -12,39 +12,36 @@
                 </p>
                 <form class="forms-sample" action="{{ route('prodi.store') }}" method="post">
                     @csrf
-                    <div class="form-group row">
-                        <label for="nama_prodi" class="col-sm-3 col-form-label">Nama Prodi</label>
+                    <div class="form-group ">
+                        <label for="nama_prodi" class="col-sm-3 col-form-label">Tambah Prodi</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" name="nama_prodi"
-                                placeholder="Nama Prodi">
+                                placeholder="Tambah Prodi"
+                                value="{{old('nama_prodi')}}">
                                 @error('nama_prodi')
                                 <span class ="text-danger">{{ $message }}</span>
                                 @enderror
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <label for="nama_dekan" class="col-sm-3 col-form-label">Nama Dekan</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" name="nama_dekan" placeholder="Nama Dekan">
-                            @error('nama_dekan')
-                                <span class ="text-danger">{{ $message }}</span>
-                                @enderror
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="nama_wakil_dekan" class="col-sm-3 col-form-label">Nama Wakil Dekan</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" name="nama_wakil_dekan" placeholder="Wakil Dekan">
-                            @error('nama_wakil_dekan')
-                                <span class ="text-danger">{{ $message }}</span>
-                                @enderror
-                        </div>
-                    </div>
-                    </div>
-                    </div>
+                    <div class="form-group">
+                        <label for="fakultas_id">Pilih Fakultas</label>
+                        <select name="fakultas_id" class="form-control">
+                            @foreach ($fakultas as $item)
+                            <option value="{{$item->id}}">{{$item->nama_fakultas}}</option>
+                            @endforeach
+                           </select>
+                           @error('nama_fakultas')
+                           <span class="text-danger">{{$message}}</span>
+                           @enderror
                     </div>
                     <button type="submit" class="btn btn-primary me-2">Simpan</button>
-                    <button class="btn btn-light">Cancel</button>
+                    <a href="{{route('prodi.index')}}" class="btn btn-rounded btn light">Cancel</a>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+
                 </form>
             </div>
         </div>
