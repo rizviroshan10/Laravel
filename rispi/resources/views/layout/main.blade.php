@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <!-- endinject -->
     <link rel="shortcut icon" href="{{ asset('images/favicon.png') }}" />
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -361,6 +363,13 @@
         <!-- Custom js for this page-->
         <script src="{{ asset('js/dashboard.js') }}"></script>
         <!-- End custom js for this page-->
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <script>
+        // In your Javascript (external .js resource or <script> tag)
+        $(document).ready(function() {
+        $('.js-example-basic-single').select2();
+        });
+</script>
 </body>
 
 </html>
