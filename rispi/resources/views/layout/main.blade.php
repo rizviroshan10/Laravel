@@ -50,13 +50,6 @@
                     <span></span>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
-                        <i class="mdi mdi-view-quilt menu-icon"></i>
-                        <span class="menu-title">Dashboard</span>
-                        <div class="badge badge-info badge-pill">2</div>
-                    </a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{{ url('fakultas') }}">
                         <i class="mdi mdi-view-list menu-icon"></i>
                         <span class="menu-title">Fakultas</span>
@@ -67,6 +60,13 @@
                     <a class="nav-link" href="{{ url('prodi') }}">
                         <i class="mdi mdi-view-module menu-icon"></i>
                         <span class="menu-title">Program Studi</span>
+                        <div class="badge badge-info badge-pill">2</div>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('mahasiswa') }}">
+                        <i class="mdi mdi-view-module menu-icon"></i>
+                        <span class="menu-title">Mahasiswa</span>
                         <div class="badge badge-info badge-pill">2</div>
                     </a>
                 </li>

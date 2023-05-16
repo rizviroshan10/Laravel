@@ -1,8 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Fakultas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
+
 
 class FakultasController extends Controller
 {
@@ -28,27 +32,27 @@ class FakultasController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request);
-        //dd($request->nama_wakil_dekan);
-        
-        //validasi data
+        // dd($request); for all
+        // dd($request->nama_fakultas); for specify
 
-        $validasi= $request->validate([
-            'nama_fakultas'=> 'required',
-            'nama_dekan'=> 'required',
+        $validasi = $request->validate([
+
+            'nama_fakultas' => 'required|unique:fakultas,nama_fakultas',
+            'nama_dekan' => 'required',
             'nama_wakil_dekan' => 'required'
+
         ]);
 
-        //dd($validasi);
-        //buat objek dari model fakultas
-        $fakultas = new Fakultas();
-        $fakultas ->nama_fakultas = $validasi['nama_fakultas'];
-        $fakultas ->nama_dekan = $validasi['nama_dekan'];
-        $fakultas ->nama_wakil_dekan = $validasi['nama_wakil_dekan'];
-        $fakultas ->save(); //simpan
+        $validasi['id'] = Str::uuid();
+        // dd($validasi);
 
-        return redirect()->route('fakultas.index')->with('success',"Data Fakultas".$validasi
-        ['nama_fakultas']."berhasil simpan");
+        $fakultas = new Fakultas();
+        $fakultas->nama_fakultas = $validasi['nama_fakultas'];
+        $fakultas->nama_dekan = $validasi['nama_dekan'];
+        $fakultas->nama_wakil_dekan = $validasi['nama_wakil_dekan'];
+        $fakultas->save();
+
+        return redirect()->route('fakultas.index')->with('success', "Data " . $validasi['nama_fakultas'] . " berhasil disimpan");
     }
 
     /**
