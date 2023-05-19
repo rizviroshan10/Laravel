@@ -51,7 +51,7 @@
                        @endforeach
                       </select> --}}
                        <input type="text" class="form-control" name="kota_lahir" placeholder="Kota Lahir">
-                        @error('kota_lahir')
+                        @error('kota_lahir')index
                            <span class="text-danger">{{$message}}</span>
                         @enderror
                       </div>
