@@ -48,7 +48,7 @@
                                   <td>{{$item->kota_lahir}}</td>
                                   <td>{{$item->Prodi->nama_prodi}}</td>
                                   <td>{{$item->created_at}}</td>
-                                  <td><input type="checkbox" class="check" value="{{ $item->}}"></td>
+                                  <td><input type="checkbox" class="check" value="{{ $item->id}}"></td>
                                   <td>{{ $item->npm}}</td>
                                   <td>{{ $item->nama}}</td>
           
