@@ -94,5 +94,14 @@ class MahasiswaController extends Controller
      */
     public function destroy(Mahasiswa $mahasiswa)
     {
+        //dd($mahasiswa);
+        $mahasiswa->delete();
+        return redirect()->route('mahasiswa,index')->with('Success','Data berhasil dihapus');
+    }
+    public function mutliDelete(Request $request)
+    {
+        Mahasiswa::whereIn('id',$request->get('selected'))->delete();
+
+        return response("Selected mahasiswa(s) deleted successfully.",200);
     }
 }
